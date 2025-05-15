@@ -3,6 +3,7 @@ import { SessionContext } from '../SessionProvider';
 import { Navigate } from 'react-router-dom';
 import { SideMenu } from '../components/SideMenu';
 import { postRepository } from '../repositories/post';
+import { Post } from '../components/Post';
 
 function Home() {
   const [content, setContent] = useState('');
@@ -15,6 +16,10 @@ function Home() {
 
   const createPost = async () => {
     const post = await postRepository.create(content, currentUser.id);
+    setPosts([
+      { ...post, userId: currentUser.id, userName: currentUser.userName },
+      ...posts,
+    ]);
     setContent('');
   };
 
@@ -51,7 +56,11 @@ function Home() {
                 Post
               </button>
             </div>
-            <div className="mt-4"></div>
+            <div className="mt-4">
+              {posts.map((post) => (
+                <Post key={post.id} post={post} />
+              ))}
+            </div>
           </div>
           <SideMenu />
         </div>
