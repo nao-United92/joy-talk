@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
-import { authRepository } from '../repogitories/auth';
+import { authRepository } from '../repositories/auth';
 import { SessionContext } from '../SessionProvider';
 
 function Signin() {

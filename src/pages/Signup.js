@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { authRepository } from '../repogitories/auth';
+import { authRepository } from '../repositories/auth';
 import { SessionContext } from '../SessionProvider';
 import { Navigate } from 'react-router-dom';
 

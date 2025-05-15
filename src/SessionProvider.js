@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-import { authRepository } from './repogitories/auth';
+import { authRepository } from './repositories/auth';
 
 const SessionContext = createContext();
 const SessionProvider = (props) => {
